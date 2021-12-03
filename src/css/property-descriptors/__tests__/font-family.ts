@@ -21,5 +21,8 @@ describe('property-descriptors', () => {
 
         it("'escaping test\\'s font'", () =>
             deepEqual(fontFamilyParse("'escaping test\\'s font'"), ["'escaping test's font'"]));
+
+        it("'1abc'", () =>
+            deepEqual(fontFamilyParse("'1abc'"), ["'1abc'"]));
     });
 });
