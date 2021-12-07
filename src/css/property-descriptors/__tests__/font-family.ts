@@ -22,7 +22,19 @@ describe('property-descriptors', () => {
         it("'escaping test\\'s font'", () =>
             deepEqual(fontFamilyParse("'escaping test\\'s font'"), ["'escaping test's font'"]));
 
+        it('-abc', () =>
+            deepEqual(fontFamilyParse('-abc'), ['-abc']));
+
+        it('ABC', () =>
+            deepEqual(fontFamilyParse('ABC'), ['ABC']));
+
         it("'1abc'", () =>
             deepEqual(fontFamilyParse("'1abc'"), ["'1abc'"]));
+
+        it("'--abc'", () =>
+            deepEqual(fontFamilyParse("'--abc'"), ["'--abc'"]));
+
+        it("'-1abc'", () =>
+        deepEqual(fontFamilyParse("'-1abc'"), ["'-1abc'"]));
     });
 });
